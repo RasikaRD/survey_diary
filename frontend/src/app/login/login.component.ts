@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         alert("Successfull Login");
         this.loginForm.reset();
         this.router.navigate(['head']);
-        localStorage.setItem(userid, Name);
+        //localStorage.setItem(userid, Name);
         return;
       }else{
         console.log(res);}

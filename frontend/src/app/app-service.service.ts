@@ -7,13 +7,9 @@ import { ProjectList } from 'src/models/project-list.model';
   providedIn: 'root'
 })
 export class AppServiceService {
-  url = "http://localhost:3000"
 
   constructor(private http: HttpClient) { }
-  getPost(){
-    return this.http.get(this.url);
-  
-  }
+
 
   addUserData(payload:object){
     return this.http.post(`http://localhost:3000/singing`, payload).pipe(map(res=>{

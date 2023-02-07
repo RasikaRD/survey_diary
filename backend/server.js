@@ -136,15 +136,15 @@ app.post("/addnew", function (req, res, next) {
         if (!req.body) {
             errors.push("An invalid input");
         }
-        const { Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model , userid} = req.body;
+        const { Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model } = req.body;
         
         //check project name
         const checkProjectName = `SELECT Name FROM project WHERE Name=?`;
         db.query(checkProjectName, [Name], (err, result, fields) => {
             if (!result.length) {
-                const sql = `INSERT INTO project(userid,Name, Location, Description, SubDate, Reminder,ProjectType, SurveyHelpers, model) VALUES (?,?,?,?,?,?,?,?,?)`;
+                const sql = `INSERT INTO project(Name, Location, Description, SubDate, Reminder,ProjectType, SurveyHelpers, model) VALUES (?,?,?,?,?,?,?,?)`;
 
-                db.query(sql, [ userid,Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model], (err, result, fields) => {
+                db.query(sql, [ Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model], (err, result, fields) => {
                     if (err) {
                         res.status(400).json({
                             "error": err.message,
