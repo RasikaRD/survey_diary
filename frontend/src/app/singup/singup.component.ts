@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppServiceService } from '../app-service.service';
 
+
 @Component({
   selector: 'app-singup',
   templateUrl: './singup.component.html',

@@ -22,8 +22,7 @@ export class AddnewtaskComponent implements OnInit{
       SubDate: ['', Validators.required],
       SurveyHelpers: ['', Validators.required],
       model: ['', Validators.required],
-      Reminder: ['', Validators.required],
-      
+      Reminder: ['', Validators.required]
     });
     
   }

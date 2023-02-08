@@ -9,46 +9,51 @@
 <div>
 </div>
 <div class="container mt-4 mb-4">
-    <h3>Completed Task List</h3>
-    <table class="table mt-4 mb-3">
+    <h3>Project Report</h3><br>
+    <h6 style="text-align: center; color: rgb(226, 100, 100);">**Befor cretae a report, should be completed it</h6>
+    <table id="project-report-{{index}}" class="table  mt-4 mb-3" *ngFor="let projectReport of projectReports; let index = index;">
         <thead>
             <tr>
-                <th scope="col"></th>
-                <th scope="col">Task</th>
-                <th scope="col">Start Date</th>
-                <th scope="col">End Date</th>
-                <th scope="col">Report</th>
-                <th scope="col">Remove</th>
+                <th colspan="2" scope="col" style="font-size: 18px;">{{projectReport.Name}}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Task 1</td>
-                <td>02/01/2023</td>
-                <td>25/01/2023</td>
-                <td>
-                    <button type="submit" class="btn btn-info">Progress</button>
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </td>
+                <td>Project Name :</td>
+                <td>{{projectReport.Name}}</td>
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>Task 2</td>
-                <td>12/01/2023</td>
-                <td>28/01/2023</td>
-                <td>
-                    <button type="submit" class="btn btn-info">Progress</button>
-                </td>
-                <td>
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </td>
+                <td>Description :</td>
+                <td>{{projectReport.Description}}</td>
             </tr>
-
+            <tr>
+                <td>Loccation :</td>
+                <td>{{projectReport.Location}}</td>
+            </tr>
+            <tr>
+                <td>Project Type :</td>
+                <td>{{projectReport.ProjectType}}</td>
+            </tr>
+            <tr>
+                <td>Start Date :</td>
+                <td>{{projectReport.cdate|date:"MM/dd/YYYY"}}</td>
+            </tr>
+            <tr>
+                <td>End date :</td>
+                <td>{{projectReport.sdate|date:"MM/dd/YYYY"}}</td>
+            </tr>
+            <tr>
+                <td>Intruments :</td>
+                <td>{{projectReport.model}}</td>
+            </tr>
+            <tr>
+                <td>Survey Helpers :</td>
+                <td>{{projectReport.SurveyHelpers}}</td>
+            </tr>
+            <tr id="down-{{index}}">
+                <button type="submit" class="btn btn-outline-success mt-2 mx-2" (click)="onDown(index)">Download Report</button>
+            </tr>
         </tbody>
     </table>
-
-
+    
 </div>

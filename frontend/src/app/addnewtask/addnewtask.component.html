@@ -58,38 +58,7 @@
                 <option >UUV/ USV/ UAV liDAR</option>
             </select>
         </div>
-        <!--
-            <div  class="form-check">
-                <input formControlName="model" class="form-check-input" type="checkbox" name="model" value="Total Station" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">Total Station</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Auto Level" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">Auto Level</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="RTK/ GPS Set" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">RTK/ GPS Set</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Handheld GPS" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">Handheld GPS</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Drone (LS/ PS)" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">Drone (LS/ PS)</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Multibeam/ Side Scan Sonars" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">Multibeam/ Side Scan Sonars</label>
-              </div>
-              <div class="form-check">
-                <input  class="form-check-input" type="checkbox" value="UUV/ USV/ UAV liDAR" id="flexCheckChecked" >
-                <label class="form-check-label" for="flexCheckChecked">UUV/ USV/ UAV liDAR</label>
-              </div>
-          -->
-
-
+     
         <div class="form-group">
             <label class="exampleFormControl" for="exampleFormControlTextarea1">Set Reminder</label><br>
             <select formControlName="Reminder" class="form-control">
@@ -99,23 +68,7 @@
                 <option disabled>Phone Call</option>
 
             </select>
-            <!--
-            <div class="form-check form-switch">
-                <input formControlName="Reminder" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                    name="Reminder" value="Email" checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Email</label>
-            </div>
-            <div class="form-check form-switch">
-                <input formControlName="Reminder" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"
-                    name="Reminder" value="SMS">
-                <label class="form-check-label" for="flexSwitchCheckChecked">SMS</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" name="Reminder[]"
-                    value="Phone call" disabled>
-                <label class="form-check-label" for="flexSwitchCheckDisabled">Phone Call</label>
-            </div>-->
-
+            
         </div>
         <button type="submit" [disabled]="!addForm.valid" class="btn btn-primary">Submit</button>
     </form>

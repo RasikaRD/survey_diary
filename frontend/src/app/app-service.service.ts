@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { ProjectList } from 'src/models/project-list.model';
+import { ProjectList, ProjectReport } from 'src/models/project-list.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,13 @@ export class AppServiceService {
 
   getProjectData(payload: Object){
     return this.http.get<ProjectList>(`http://localhost:3000/projects`, payload).pipe(map(res=>{
+      return res;
+    }))
+
+  }
+
+  getProjectReport(payload: Object){
+    return this.http.get<ProjectReport>(`http://localhost:3000/CreateReport`, payload).pipe(map(res=>{
       return res;
     }))
 

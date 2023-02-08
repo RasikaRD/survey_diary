@@ -136,7 +136,7 @@ app.post("/addnew", function (req, res, next) {
         if (!req.body) {
             errors.push("An invalid input");
         }
-        const { Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model } = req.body;
+        const { Name, Location, Description, SubDate, Reminder, ProjectType, SurveyHelpers, model} = req.body;
         
         //check project name
         const checkProjectName = `SELECT Name FROM project WHERE Name=?`;
@@ -271,6 +271,36 @@ app.post("/deleteProject", function (req, res, next) {
     }
 });
 
+//Create a Report
 
+app.get("/CreateReport" , function(req, res){
+    try{
+        var errors = []
+
+        if (!req.body) {
+            errors.push("An invalid input");
+        }
+        const { Name} = req.body;
+        const sql = `SELECT Name, Description, Location, ProjectType, date_format(SubDate, '%Y-%m-%d %H:%i')sdate,date_format(CreatedDate, '%Y-%m-%d %H:%i')cdate, model, SurveyHelpers FROM project WHERE SubDate <current_date()`;
+
+        db.query(sql, [Name], (err, result, fields) => {
+            if (err) {
+                res.status(400).json({
+                    "error": err.message,
+                    "message": "Still not complete the project",
+                    "status": 201
+                })
+                return;
+            } else {
+                res.status(200).json(result)
+            }
+        });
+
+
+    }
+    catch(E) {
+        res.status(400).send(E);
+    }
+})
 
 module.exports = app;
